@@ -33,32 +33,32 @@ class _SuraDetailsState extends State<SuraDetails> {
           ),
         ),
         body: Card(
+          color: Colors.white,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(
               24,
             ),
           ),
-          elevation: 3.5,
           margin: const EdgeInsets.symmetric(vertical: 55, horizontal: 24),
           child: verses.isNotEmpty
               ? ListView.separated(
                   separatorBuilder: (context, index) => const Divider(
                     color: MyThemeData.lightPrimary,
                     thickness: 2,
-                    indent: 40,
-                    endIndent: 40,
-                    height: 1,
-                  ),
-                  itemCount: verses.length,
-                  itemBuilder: (context, index) {
-                    return VerseContent(verses[index], index);
-                  },
-                )
+              indent: 40,
+              endIndent: 40,
+              height: 1,
+            ),
+            itemCount: verses.length,
+            itemBuilder: (context, index) {
+              return VerseContent(verses[index], index);
+            },
+          )
               : const Center(
-                  child: CircularProgressIndicator(
-                    color: MyThemeData.lightPrimary,
-                  ),
-                ),
+            child: CircularProgressIndicator(
+              color: MyThemeData.lightPrimary,
+            ),
+          ),
         ),
       ),
     );
