@@ -25,6 +25,8 @@ class MyApp extends StatelessWidget {
         SuraDetails.routeName: (_) => SuraDetails(),
         HadethDetails.routeName: (_) => HadethDetails(),
       },
+      darkTheme: MyThemeData.darkTheme,
+      themeMode: ThemeMode.dark,
     );
   }
 }

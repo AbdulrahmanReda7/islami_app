@@ -32,10 +32,7 @@ class SuraTitle extends StatelessWidget {
         child: Text(
           textAlign: TextAlign.center,
           title,
-          style: const TextStyle(
-            fontWeight: FontWeight.w400,
-            fontSize: 25,
-          ),
+          style: Theme.of(context).textTheme.bodyMedium,
         ),
       ),
     );

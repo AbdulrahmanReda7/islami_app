@@ -22,10 +22,7 @@ class VerseContent extends StatelessWidget {
           textDirection: TextDirection.rtl,
           textAlign: TextAlign.center,
           "$content (${index + 1})",
-          style: const TextStyle(
-            fontWeight: FontWeight.w400,
-            fontSize: 25,
-          ),
+          style: Theme.of(context).textTheme.bodySmall,
         ),
       ),
     );

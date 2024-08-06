@@ -20,7 +20,7 @@ class HadethDetails extends StatelessWidget {
           ),
         ),
         body: Card(
-          color: Colors.white,
+          color: Theme.of(context).cardColor,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(
               24,
@@ -36,9 +36,7 @@ class HadethDetails extends StatelessWidget {
                     child: Text(
                       textAlign: TextAlign.center,
                       hadethData.content,
-                      style: const TextStyle(
-                        fontSize: 20,
-                      ),
+                      style: Theme.of(context).textTheme.bodySmall,
                     ),
                   ),
                 ),

@@ -37,12 +37,9 @@ class _HadethTabState extends State<HadethTab> {
           const SizedBox(
             height: 5,
           ),
-          const Text(
+           Text(
             "Ahadeth",
-            style: TextStyle(
-              fontWeight: FontWeight.w600,
-              fontSize: 25,
-            ),
+            style: Theme.of(context).textTheme.titleMedium,
           ),
           const SizedBox(
             height: 5,

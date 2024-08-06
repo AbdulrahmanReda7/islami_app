@@ -28,8 +28,9 @@ class _HomeScreenState extends State<HomeScreen> {
     return DefaultScreen(
       body: Scaffold(
         appBar: AppBar(
-          title: const Text(
+          title: Text(
             "Islami",
+            style: Theme.of(context).textTheme.titleMedium,
           ),
         ),
         bottomNavigationBar: BottomNavigationBar(
@@ -43,18 +44,22 @@ class _HomeScreenState extends State<HomeScreen> {
             BottomNavItem(
               "Quran",
               "assets/images/quran_icn.png",
+              Theme.of(context).colorScheme.primary,
             ),
             BottomNavItem(
               "Hadeth",
               "assets/images/hadeth_icn.png",
+              Theme.of(context).colorScheme.primary,
             ),
             BottomNavItem(
               "Sebha",
               "assets/images/sebha_icn.png",
+              Theme.of(context).colorScheme.primary,
             ),
             BottomNavItem(
               "Radio",
               "assets/images/radio_icn.png",
+              Theme.of(context).colorScheme.primary,
             ),
           ],
         ),
