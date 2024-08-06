@@ -137,12 +137,9 @@ class QuranTab extends StatelessWidget {
           const SizedBox(
             height: 5,
           ),
-          const Text(
+           Text(
             "Sura Name",
-            style: TextStyle(
-              fontWeight: FontWeight.w600,
-              fontSize: 25,
-            ),
+            style: Theme.of(context).textTheme.titleMedium,
           ),
           const SizedBox(
             height: 5,

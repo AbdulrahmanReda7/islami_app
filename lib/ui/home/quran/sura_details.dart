@@ -30,10 +30,11 @@ class _SuraDetailsState extends State<SuraDetails> {
         appBar: AppBar(
           title: Text(
             args.suraTitle,
+            style: Theme.of(context).textTheme.titleSmall,
           ),
         ),
         body: Card(
-          color: Colors.white,
+          color: Theme.of(context).cardColor,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(
               24,
