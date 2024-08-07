@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app/core/theme/my_theme.dart';
+import 'package:islami_app/core/widgets/default_screen.dart';
 import 'package:islami_app/ui/home/quran/sura_title.dart';
 
 class QuranTab extends StatelessWidget {
@@ -138,7 +139,7 @@ class QuranTab extends StatelessWidget {
             height: 5,
           ),
            Text(
-            "Sura Name",
+             appTranslation(context).suraName,
             style: Theme.of(context).textTheme.titleMedium,
           ),
           const SizedBox(

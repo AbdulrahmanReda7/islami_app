@@ -7,7 +7,10 @@ class MyThemeData {
   static const bool isDark = true;
 
   static final ThemeData lightTheme = ThemeData(
-    cardColor: Colors.white,
+    cardTheme: const CardTheme(
+      color: Colors.white,
+      surfaceTintColor: null,
+    ),
     textTheme: const TextTheme(
       titleSmall: TextStyle(
         fontSize: 25,
@@ -67,7 +70,10 @@ class MyThemeData {
     ),
   );
   static final ThemeData darkTheme = ThemeData(
-    cardColor: darkPrimary,
+    cardTheme: const CardTheme(
+      color: darkPrimary,
+      surfaceTintColor: null,
+    ),
     textTheme: const TextTheme(
       titleSmall: TextStyle(
         fontSize: 25,

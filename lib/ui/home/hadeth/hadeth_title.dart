@@ -6,7 +6,7 @@ import 'hadeth_data.dart';
 class HadethTitle extends StatelessWidget {
   HadethData hadethData;
 
-  HadethTitle(this.hadethData);
+  HadethTitle(this.hadethData, {super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami_app/core/theme/my_theme.dart';
 
 class DefaultScreen extends StatelessWidget {
@@ -19,4 +20,8 @@ class DefaultScreen extends StatelessWidget {
       ],
     );
   }
+}
+
+AppLocalizations appTranslation(BuildContext context) {
+  return AppLocalizations.of(context)!;
 }

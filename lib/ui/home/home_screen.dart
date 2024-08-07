@@ -29,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Scaffold(
         appBar: AppBar(
           title: Text(
-            "Islami",
+            appTranslation(context).appTitle,
             style: Theme.of(context).textTheme.titleMedium,
           ),
         ),
@@ -42,22 +42,22 @@ class _HomeScreenState extends State<HomeScreen> {
           currentIndex: selectedIndex,
           items: [
             BottomNavItem(
-              "Quran",
+              appTranslation(context).quranTab,
               "assets/images/quran_icn.png",
               Theme.of(context).colorScheme.primary,
             ),
             BottomNavItem(
-              "Hadeth",
+              appTranslation(context).hadethTab,
               "assets/images/hadeth_icn.png",
               Theme.of(context).colorScheme.primary,
             ),
             BottomNavItem(
-              "Sebha",
+              appTranslation(context).tasbehTab,
               "assets/images/sebha_icn.png",
               Theme.of(context).colorScheme.primary,
             ),
             BottomNavItem(
-              "Radio",
+              appTranslation(context).radioTab,
               "assets/images/radio_icn.png",
               Theme.of(context).colorScheme.primary,
             ),
