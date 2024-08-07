@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami_app/ui/home/hadeth/hadeth_details.dart';
 import 'package:islami_app/ui/home/home_screen.dart';
 import 'package:islami_app/ui/home/quran/sura_details.dart';
@@ -20,13 +21,16 @@ class MyApp extends StatelessWidget {
       initialRoute: SplashScreen.routeName,
       theme: MyThemeData.lightTheme,
       routes: {
-        SplashScreen.routeName: (_) => SplashScreen(),
+        SplashScreen.routeName: (_) => const SplashScreen(),
         HomeScreen.routeName: (_) => HomeScreen(),
-        SuraDetails.routeName: (_) => SuraDetails(),
-        HadethDetails.routeName: (_) => HadethDetails(),
+        SuraDetails.routeName: (_) => const SuraDetails(),
+        HadethDetails.routeName: (_) => const HadethDetails(),
       },
       darkTheme: MyThemeData.darkTheme,
       themeMode: ThemeMode.dark,
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
+      locale: const Locale("ar"),
     );
   }
 }

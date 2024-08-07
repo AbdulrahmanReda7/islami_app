@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:islami_app/core/widgets/default_screen.dart';
 
 import '../../../core/theme/my_theme.dart';
 import 'hadeth_data.dart';
@@ -37,8 +38,8 @@ class _HadethTabState extends State<HadethTab> {
           const SizedBox(
             height: 5,
           ),
-           Text(
-            "Ahadeth",
+          Text(
+            appTranslation(context).hadethNum,
             style: Theme.of(context).textTheme.titleMedium,
           ),
           const SizedBox(
