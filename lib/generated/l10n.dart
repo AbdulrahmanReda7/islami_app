@@ -1,7 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-
 import 'intl/messages_all.dart';
 
 // **************************************************************************
@@ -50,76 +49,6 @@ class S {
   static S? maybeOf(BuildContext context) {
     return Localizations.of<S>(context, S);
   }
-
-  /// `Islami`
-  String get appTitle {
-    return Intl.message(
-      'Islami',
-      name: 'appTitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Sura Name`
-  String get suraName {
-    return Intl.message(
-      'Sura Name',
-      name: 'suraName',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Quran`
-  String get Quran_Tab {
-    return Intl.message(
-      'Quran',
-      name: 'Quran_Tab',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Hadeth`
-  String get Hadeth_Tab {
-    return Intl.message(
-      'Hadeth',
-      name: 'Hadeth_Tab',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Radio`
-  String get Radio_Tab {
-    return Intl.message(
-      'Radio',
-      name: 'Radio_Tab',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `tasbeh`
-  String get Tasbeh_Tab {
-    return Intl.message(
-      'tasbeh',
-      name: 'Tasbeh_Tab',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Ahadeth`
-  String get Hadeth_Num {
-    return Intl.message(
-      'Ahadeth',
-      name: 'Hadeth_Num',
-      desc: '',
-      args: [],
-    );
-  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
@@ -128,16 +57,13 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
   List<Locale> get supportedLocales {
     return const <Locale>[
       Locale.fromSubtags(languageCode: 'en'),
-      Locale.fromSubtags(languageCode: 'ar'),
     ];
   }
 
   @override
   bool isSupported(Locale locale) => _isSupported(locale);
-
   @override
   Future<S> load(Locale locale) => S.load(locale);
-
   @override
   bool shouldReload(AppLocalizationDelegate old) => false;
 

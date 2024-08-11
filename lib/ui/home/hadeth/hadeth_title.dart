@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:islami_app/ui/home/hadeth/hadeth_details.dart';
 
 import 'hadeth_data.dart';
@@ -23,7 +24,7 @@ class HadethTitle extends StatelessWidget {
         child: Text(
           textAlign: TextAlign.center,
           hadethData.title,
-          style: Theme.of(context).textTheme.bodyMedium,
+          style: GoogleFonts.tajawal(),
         ),
       ),
     );

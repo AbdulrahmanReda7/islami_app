@@ -4,7 +4,6 @@ import 'package:islami_app/ui/home/hadeth/hadeth_details.dart';
 import 'package:islami_app/ui/home/home_screen.dart';
 import 'package:islami_app/ui/home/quran/sura_details.dart';
 import 'package:islami_app/ui/splash/splash_screen.dart';
-
 import 'core/theme/my_theme.dart';
 
 void main() {
@@ -27,10 +26,10 @@ class MyApp extends StatelessWidget {
         HadethDetails.routeName: (_) => const HadethDetails(),
       },
       darkTheme: MyThemeData.darkTheme,
-      themeMode: ThemeMode.dark,
+      themeMode: ThemeMode.light,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      locale: const Locale("ar"),
+      locale: const Locale("en"),
     );
   }
 }

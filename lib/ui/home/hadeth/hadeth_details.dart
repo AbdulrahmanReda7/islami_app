@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app/ui/home/hadeth/hadeth_data.dart';
-
 import '../../../core/widgets/default_screen.dart';
 
 class HadethDetails extends StatelessWidget {
@@ -17,6 +16,7 @@ class HadethDetails extends StatelessWidget {
         appBar: AppBar(
           title: Text(
             hadethData.title,
+            style: Theme.of(context).textTheme.titleSmall,
           ),
         ),
         body: Card(
@@ -36,7 +36,7 @@ class HadethDetails extends StatelessWidget {
                     child: Text(
                       textAlign: TextAlign.center,
                       hadethData.content,
-                      style: Theme.of(context).textTheme.bodySmall,
+                      style: Theme.of(context).textTheme.bodyMedium,
                     ),
                   ),
                 ),
