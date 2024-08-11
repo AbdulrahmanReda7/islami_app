@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class VerseContent extends StatelessWidget {
   int index;
   String content;
 
-  VerseContent(
-    this.content,
-    this.index,
-  );
+  VerseContent(this.content, this.index, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +20,9 @@ class VerseContent extends StatelessWidget {
           textDirection: TextDirection.rtl,
           textAlign: TextAlign.center,
           "$content (${index + 1})",
-          style: Theme.of(context).textTheme.bodySmall,
+          style: GoogleFonts.tajawal(
+            textStyle: Theme.of(context).textTheme.bodyMedium,
+          ),
         ),
       ),
     );

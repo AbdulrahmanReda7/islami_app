@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:islami_app/ui/home/quran/sura_details.dart';
 import 'package:islami_app/ui/home/quran/sura_details_args.dart';
 
 class SuraTitle extends StatelessWidget {
-  int index;
-  String title;
+  final int index;
+  final String title;
 
-  SuraTitle(
-    this.title,
-    this.index,
-  );
+  const SuraTitle(this.title, this.index, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +30,7 @@ class SuraTitle extends StatelessWidget {
         child: Text(
           textAlign: TextAlign.center,
           title,
-          style: Theme.of(context).textTheme.bodyMedium,
+          style: GoogleFonts.tajawal(),
         ),
       ),
     );

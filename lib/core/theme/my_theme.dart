@@ -4,9 +4,10 @@ class MyThemeData {
   static const Color lightPrimary = Color(0xFFB7935F);
   static const Color darkPrimary = Color(0xFF141A2E);
   static const Color darkSecondary = Color(0xFFFACC1D);
-  static const bool isDark = true;
+  static const bool isDark = false;
 
   static final ThemeData lightTheme = ThemeData(
+    useMaterial3: false,
     cardTheme: const CardTheme(
       color: Colors.white,
       surfaceTintColor: null,
@@ -14,18 +15,18 @@ class MyThemeData {
     textTheme: const TextTheme(
       titleSmall: TextStyle(
         fontSize: 25,
-        fontWeight: FontWeight.w500,
+        fontWeight: FontWeight.w600,
         fontFamily: "elmessiri",
         color: Colors.black,
       ),
       titleMedium: TextStyle(
         fontSize: 30,
-        fontWeight: FontWeight.bold,
+        fontWeight: FontWeight.w700,
         fontFamily: "elmessiri",
         color: Colors.black,
       ),
       bodyMedium: TextStyle(
-        fontSize: 20,
+        fontSize: 25,
         fontWeight: FontWeight.w500,
         fontFamily: "elmessiri",
         color: Colors.black,
@@ -60,13 +61,11 @@ class MyThemeData {
       ),
     ),
     colorScheme: ColorScheme.fromSeed(
-      primary: const Color(0xFFB7935F),
+      primary: lightPrimary,
       onPrimary: Colors.white,
-      secondary: const Color(0xFFB7935F),
+      secondary: lightPrimary,
       onSecondary: const Color(0xFF242424),
-      seedColor: const Color(
-        0xFFB7935F,
-      ),
+      seedColor: lightPrimary,
     ),
   );
   static final ThemeData darkTheme = ThemeData(
@@ -88,7 +87,7 @@ class MyThemeData {
         color: Colors.white,
       ),
       bodyMedium: TextStyle(
-        fontSize: 20,
+        fontSize: 25,
         fontWeight: FontWeight.w500,
         fontFamily: "elmessiri",
         color: Colors.white,

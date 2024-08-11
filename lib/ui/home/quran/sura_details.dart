@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:islami_app/core/theme/my_theme.dart';
 import 'package:islami_app/core/widgets/default_screen.dart';
 import 'package:islami_app/ui/home/quran/sura_details_args.dart';
@@ -28,9 +29,20 @@ class _SuraDetailsState extends State<SuraDetails> {
     return DefaultScreen(
       body: Scaffold(
         appBar: AppBar(
-          title: Text(
-            args.suraTitle,
-            style: Theme.of(context).textTheme.titleSmall,
+          title: Padding(
+            padding: const EdgeInsets.only(left: 55.0),
+            child: Row(
+              children: [
+                Text(
+                  args.suraTitle,
+                  style: GoogleFonts.tajawal(),
+                ),
+                const SizedBox(
+                  width: 30,
+                ),
+                const Icon(size: 35, Icons.play_circle),
+              ],
+            ),
           ),
         ),
         body: Card(

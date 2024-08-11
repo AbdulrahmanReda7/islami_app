@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:islami_app/core/theme/my_theme.dart';
 
 class SebhaTab extends StatefulWidget {
@@ -46,12 +47,9 @@ class _SebhaTabState extends State<SebhaTab> {
             const SizedBox(
               height: 20,
             ),
-            const Text(
+            Text(
               "عدد التسبيحات",
-              style: TextStyle(
-                fontSize: 25,
-                fontWeight: FontWeight.w600,
-              ),
+              style: GoogleFonts.tajawal(),
             ),
             const SizedBox(
               height: 20,
@@ -81,11 +79,7 @@ class _SebhaTabState extends State<SebhaTab> {
               ),
               child: Text(
                 Azkar[indexOfZekr],
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 25,
-                  fontWeight: FontWeight.w600,
-                ),
+                style: GoogleFonts.tajawal(),
               ),
             ),
           ],

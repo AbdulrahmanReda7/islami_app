@@ -4,7 +4,7 @@ import 'package:islami_app/core/widgets/default_screen.dart';
 import 'package:islami_app/ui/home/quran/sura_title.dart';
 
 class QuranTab extends StatelessWidget {
-  List<String> suraNames = [
+  final List<String> suraNames = [
     "الفاتحه",
     "البقرة",
     "آل عمران",
@@ -121,6 +121,8 @@ class QuranTab extends StatelessWidget {
     "الناس",
   ];
 
+  QuranTab({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -138,8 +140,8 @@ class QuranTab extends StatelessWidget {
           const SizedBox(
             height: 5,
           ),
-           Text(
-             appTranslation(context).suraName,
+          Text(
+            appTranslation(context).suraName,
             style: Theme.of(context).textTheme.titleMedium,
           ),
           const SizedBox(
