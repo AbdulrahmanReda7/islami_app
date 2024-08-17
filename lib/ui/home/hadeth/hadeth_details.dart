@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app/ui/home/hadeth/hadeth_data.dart';
+
 import '../../../core/widgets/default_screen.dart';
 
 class HadethDetails extends StatelessWidget {
@@ -16,11 +17,13 @@ class HadethDetails extends StatelessWidget {
         appBar: AppBar(
           title: Text(
             hadethData.title,
-            style: Theme.of(context).textTheme.titleSmall,
+            style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                  color: Theme.of(context).colorScheme.secondary,
+                ),
           ),
         ),
         body: Card(
-          color: Theme.of(context).cardColor,
+          color: Theme.of(context).cardTheme.color,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(
               24,
@@ -36,7 +39,9 @@ class HadethDetails extends StatelessWidget {
                     child: Text(
                       textAlign: TextAlign.center,
                       hadethData.content,
-                      style: Theme.of(context).textTheme.bodyMedium,
+                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                            color: Theme.of(context).colorScheme.secondary,
+                          ),
                     ),
                   ),
                 ),

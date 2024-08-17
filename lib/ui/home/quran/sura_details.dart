@@ -1,3 +1,4 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -35,18 +36,29 @@ class _SuraDetailsState extends State<SuraDetails> {
               children: [
                 Text(
                   args.suraTitle,
-                  style: GoogleFonts.tajawal(),
+                  style: GoogleFonts.tajawal().copyWith(
+                    color: Theme.of(context).colorScheme.secondary,
+                  ),
                 ),
                 const SizedBox(
                   width: 30,
                 ),
-                const Icon(size: 35, Icons.play_circle),
+                InkWell(
+                    onTap: () {
+                      final AudioPlayer player = AudioPlayer();
+                      player.play(AssetSource("assets/sounds/2.mp3"));
+                    },
+                    child: Icon(
+                      size: 35,
+                      Icons.play_circle,
+                      color: Theme.of(context).colorScheme.secondary,
+                    )),
               ],
             ),
           ),
         ),
         body: Card(
-          color: Theme.of(context).cardColor,
+          color: Theme.of(context).cardTheme.color,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(
               24,
@@ -58,20 +70,20 @@ class _SuraDetailsState extends State<SuraDetails> {
                   separatorBuilder: (context, index) => const Divider(
                     color: MyThemeData.lightPrimary,
                     thickness: 2,
-              indent: 40,
-              endIndent: 40,
-              height: 1,
-            ),
-            itemCount: verses.length,
-            itemBuilder: (context, index) {
-              return VerseContent(verses[index], index);
-            },
-          )
-              : const Center(
-            child: CircularProgressIndicator(
-              color: MyThemeData.lightPrimary,
-            ),
-          ),
+                    indent: 40,
+                    endIndent: 40,
+                    height: 1,
+                  ),
+                  itemCount: verses.length,
+                  itemBuilder: (context, index) {
+                    return VerseContent(verses[index], index);
+                  },
+                )
+              : Center(
+                  child: CircularProgressIndicator(
+                    color: Theme.of(context).colorScheme.secondary,
+                  ),
+                ),
         ),
       ),
     );
@@ -79,7 +91,7 @@ class _SuraDetailsState extends State<SuraDetails> {
 
   void readFileData(int fileIndex) async {
     String fileContent =
-        await rootBundle.loadString("assets/files/${fileIndex + 1}.txt");
+    await rootBundle.loadString("assets/files/${fileIndex + 1}.txt");
     List<String> lines = fileContent.trim().split("\n");
     verses = lines;
     setState(() {});

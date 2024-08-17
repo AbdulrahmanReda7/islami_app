@@ -5,9 +5,9 @@ import 'package:islami_app/ui/home/hadeth/hadeth_details.dart';
 import 'hadeth_data.dart';
 
 class HadethTitle extends StatelessWidget {
-  HadethData hadethData;
+  final HadethData hadethData;
 
-  HadethTitle(this.hadethData, {super.key});
+  const HadethTitle(this.hadethData, {super.key});
 
   @override
   Widget build(BuildContext context) {

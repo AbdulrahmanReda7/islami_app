@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:islami_app/core/theme/my_theme.dart';
+import 'package:islami_app/ui/providers/theme_provider.dart';
 
 class SebhaTab extends StatefulWidget {
+  const SebhaTab({super.key});
+
   @override
   State<SebhaTab> createState() => _SebhaTabState();
 }
@@ -10,7 +13,7 @@ class SebhaTab extends StatefulWidget {
 class _SebhaTabState extends State<SebhaTab> {
   int zekrCounter = 0;
   int turnes = 0;
-  List<String> Azkar = [
+  final List<String> azkar = [
     'سُبْحَانَ اللَّهِ ',
     'الْحَمْدُ لِلَّهِ ',
     'لَا إلَه إلّا اللهُ',
@@ -20,6 +23,7 @@ class _SebhaTabState extends State<SebhaTab> {
 
   @override
   Widget build(BuildContext context) {
+    ThemeProvider themeProvider = ThemeProvider.get(context);
     return Scaffold(
       body: Center(
         child: Column(
@@ -27,7 +31,9 @@ class _SebhaTabState extends State<SebhaTab> {
             Stack(
               alignment: Alignment.topCenter,
               children: [
-                Image.asset("assets/images/head_sebha_logo.png"),
+                themeProvider.currentTheme == ThemeMode.dark
+                    ? Image.asset("assets/images/head_sebha_dark.png")
+                    : Image.asset("assets/images/head_sebha_logo.png"),
                 Padding(
                   padding: const EdgeInsets.only(top: 75.0),
                   child: RotatedBox(
@@ -38,8 +44,9 @@ class _SebhaTabState extends State<SebhaTab> {
                         onTap: () {
                           onSebhaClick();
                         },
-                        child:
-                            Image.asset("assets/images/body_sebha_logo.png")),
+                        child: themeProvider.currentTheme == ThemeMode.dark
+                            ? Image.asset("assets/images/body_sebha_dark.png")
+                            : Image.asset("assets/images/body_sebha_logo.png")),
                   ),
                 ),
               ],
@@ -49,7 +56,7 @@ class _SebhaTabState extends State<SebhaTab> {
             ),
             Text(
               "عدد التسبيحات",
-              style: GoogleFonts.tajawal(),
+              style: Theme.of(context).textTheme.bodyMedium,
             ),
             const SizedBox(
               height: 20,
@@ -58,28 +65,31 @@ class _SebhaTabState extends State<SebhaTab> {
               padding: const EdgeInsets.all(22),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
-                  color: const Color(0xFFc9b496)),
+                  color: Theme.of(context).colorScheme.primary),
               child: Text(
                 "$zekrCounter",
-                style: const TextStyle(
-                  fontSize: 25,
-                  fontWeight: FontWeight.w600,
-                ),
+                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                      color: Theme.of(context).colorScheme.onPrimary,
+                    ),
               ),
             ),
             const SizedBox(
               height: 25,
             ),
             Container(
-              padding:
-                  const EdgeInsets.only(right: 30, left: 30, top: 5, bottom: 5),
+              padding: const EdgeInsets.only(
+                  right: 25, left: 25, top: 10, bottom: 10),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
-                color: MyThemeData.lightPrimary,
+                color: themeProvider.currentTheme == ThemeMode.dark
+                    ? MyThemeData.darkSecondary
+                    : MyThemeData.lightPrimary,
               ),
               child: Text(
-                Azkar[indexOfZekr],
-                style: GoogleFonts.tajawal(),
+                azkar[indexOfZekr],
+                style: GoogleFonts.tajawal().copyWith(
+                  color: Theme.of(context).colorScheme.onSecondary,
+                ),
               ),
             ),
           ],
@@ -94,8 +104,9 @@ class _SebhaTabState extends State<SebhaTab> {
       indexOfZekr++;
       zekrCounter = 0;
     }
-    if (indexOfZekr == Azkar.length) {
+    if (indexOfZekr == azkar.length) {
       zekrCounter = 0;
+      indexOfZekr = 0;
     }
     turnes++;
     setState(() {});

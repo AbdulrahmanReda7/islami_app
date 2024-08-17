@@ -1,8 +1,8 @@
 class SuraDetailsArgs {
-  int suraIndex;
-  String suraTitle;
+  final int suraIndex;
+  final String suraTitle;
 
-  SuraDetailsArgs(
+  const SuraDetailsArgs(
     this.suraIndex,
     this.suraTitle,
   );

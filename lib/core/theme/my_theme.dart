@@ -4,9 +4,16 @@ class MyThemeData {
   static const Color lightPrimary = Color(0xFFB7935F);
   static const Color darkPrimary = Color(0xFF141A2E);
   static const Color darkSecondary = Color(0xFFFACC1D);
-  static const bool isDark = false;
 
   static final ThemeData lightTheme = ThemeData(
+    bottomSheetTheme: const BottomSheetThemeData(
+      shape: RoundedRectangleBorder(
+        side: BorderSide(color: lightPrimary, width: 3),
+        borderRadius: BorderRadius.all(Radius.circular(30.0)),
+      ),
+      showDragHandle: true,
+      backgroundColor: Colors.white,
+    ),
     useMaterial3: false,
     cardTheme: const CardTheme(
       color: Colors.white,
@@ -62,13 +69,23 @@ class MyThemeData {
     ),
     colorScheme: ColorScheme.fromSeed(
       primary: lightPrimary,
-      onPrimary: Colors.white,
-      secondary: lightPrimary,
-      onSecondary: const Color(0xFF242424),
+      onPrimary: Colors.black,
+      secondary: Colors.black,
+      onSecondary: Colors.black,
       seedColor: lightPrimary,
     ),
   );
+
   static final ThemeData darkTheme = ThemeData(
+    bottomSheetTheme: const BottomSheetThemeData(
+      shape: RoundedRectangleBorder(
+        side: BorderSide(color: darkSecondary, width: 3),
+        borderRadius: BorderRadius.all(Radius.circular(30.0)),
+      ),
+      showDragHandle: true,
+      backgroundColor: darkPrimary,
+    ),
+    useMaterial3: false,
     cardTheme: const CardTheme(
       color: darkPrimary,
       surfaceTintColor: null,
@@ -125,7 +142,7 @@ class MyThemeData {
       primary: darkPrimary,
       onPrimary: Colors.white,
       secondary: darkSecondary,
-      onSecondary: const Color(0xFF242424),
+      onSecondary: Colors.black,
       seedColor: darkPrimary,
     ),
   );
