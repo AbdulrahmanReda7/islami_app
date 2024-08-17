@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 class BottomNavItem extends BottomNavigationBarItem {
   BottomNavItem(
-    String title,
-    Color backgroundColor, {
-    String? iconPath,
-    Icon? mainIcon,
+    final String title,
+    final Color backgroundColor, {
+    final String? iconPath,
+    final Icon? mainIcon,
   }) : super(
           icon: mainIcon ??
               ImageIcon(

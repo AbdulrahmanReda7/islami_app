@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:islami_app/core/theme/my_theme.dart';
+import 'package:islami_app/ui/providers/theme_provider.dart';
 
 class DefaultScreen extends StatelessWidget {
-  Widget body;
+  final Widget body;
 
-  DefaultScreen({super.key, required this.body});
+  const DefaultScreen({super.key, required this.body});
 
   @override
   Widget build(BuildContext context) {
-    bool isDark = MyThemeData.isDark;
+    ThemeProvider themeProvider = ThemeProvider.get(context);
     return Stack(
       children: [
         Image.asset(
-          isDark ? "assets/images/dark_bg.png" : "assets/images/main_bg.jpg",
+          themeProvider.isDarkEnabled()
+              ? "assets/images/dark_bg.png"
+              : "assets/images/main_bg.jpg",
           fit: BoxFit.fill,
         ),
         body,
@@ -22,6 +24,7 @@ class DefaultScreen extends StatelessWidget {
   }
 }
 
-AppLocalizations appTranslation(BuildContext context) {
+AppLocalizations getTranslation(BuildContext context) {
+  // return object of AppLocalizations
   return AppLocalizations.of(context)!;
 }

@@ -7,12 +7,14 @@ import 'hadeth_data.dart';
 import 'hadeth_title.dart';
 
 class HadethTab extends StatefulWidget {
+  const HadethTab({super.key});
+
   @override
   State<HadethTab> createState() => _HadethTabState();
 }
 
 class _HadethTabState extends State<HadethTab> {
-  List<HadethData> allHadeth = [];
+  final List<HadethData> allHadeth = [];
 
   @override
   void initState() {
@@ -39,7 +41,7 @@ class _HadethTabState extends State<HadethTab> {
             height: 5,
           ),
           Text(
-            appTranslation(context).hadethNum,
+            getTranslation(context).hadethNum,
             style: Theme.of(context).textTheme.titleMedium,
           ),
           const SizedBox(

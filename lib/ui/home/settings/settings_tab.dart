@@ -1,28 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:islami_app/core/theme/my_theme.dart';
+import 'package:islami_app/core/widgets/default_screen.dart';
 import 'package:islami_app/core/widgets/lang_bottom_sheet.dart';
 import 'package:islami_app/core/widgets/theme_bottom_sheet.dart';
+import 'package:islami_app/ui/providers/theme_provider.dart';
 
 class SettingsTab extends StatelessWidget {
   const SettingsTab({super.key});
 
   @override
   Widget build(BuildContext context) {
+    ThemeProvider themeProvider = ThemeProvider.get(context);
     return Padding(
       padding: const EdgeInsets.all(10.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "Theme",
+            getTranslation(context).theme,
             style: GoogleFonts.alumniSans(
               textStyle: Theme.of(context).textTheme.titleMedium,
             ),
           ),
           const Divider(
             height: 5,
-            color: Colors.white,
+            color: Colors.transparent,
           ),
           InkWell(
             onTap: () {
@@ -34,13 +37,13 @@ class SettingsTab extends StatelessWidget {
               decoration: BoxDecoration(
                 border: Border.all(color: MyThemeData.lightPrimary),
                 borderRadius: BorderRadius.circular(18),
-                color: Theme.of(context).cardColor,
+                color: Theme.of(context).cardTheme.color,
               ),
               child: Text(
-                "Light",
-                style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                      color: Theme.of(context).colorScheme.primary,
-                    ),
+                themeProvider.isDarkEnabled()
+                    ? getTranslation(context).dark
+                    : getTranslation(context).light,
+                style: Theme.of(context).textTheme.bodyMedium,
               ),
             ),
           ),
@@ -49,7 +52,7 @@ class SettingsTab extends StatelessWidget {
             color: Colors.transparent,
           ),
           Text(
-            "Language",
+            getTranslation(context).language,
             style: GoogleFonts.alumniSans(
               textStyle: Theme.of(context).textTheme.titleMedium,
             ),
@@ -68,13 +71,11 @@ class SettingsTab extends StatelessWidget {
               decoration: BoxDecoration(
                 border: Border.all(color: MyThemeData.lightPrimary),
                 borderRadius: BorderRadius.circular(18),
-                color: Theme.of(context).cardColor,
+                color: Theme.of(context).cardTheme.color,
               ),
               child: Text(
-                "English",
-                style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                      color: Theme.of(context).colorScheme.primary,
-                    ),
+                getTranslation(context).english,
+                style: Theme.of(context).textTheme.bodyMedium,
               ),
             ),
           ),
@@ -85,13 +86,6 @@ class SettingsTab extends StatelessWidget {
 
   void showThemeBottomSheet(BuildContext context) {
     showModalBottomSheet(
-      backgroundColor: Colors.white,
-      shape: RoundedRectangleBorder(
-        side:
-            BorderSide(color: Theme.of(context).colorScheme.primary, width: 3),
-        borderRadius: const BorderRadius.all(Radius.circular(30.0)),
-      ),
-      showDragHandle: true,
       context: context,
       builder: (context) {
         return const ThemeBottomSheet();
@@ -101,13 +95,6 @@ class SettingsTab extends StatelessWidget {
 
   void showLangBottomSheet(BuildContext context) {
     showModalBottomSheet(
-      backgroundColor: Colors.white,
-      shape: RoundedRectangleBorder(
-        side:
-            BorderSide(color: Theme.of(context).colorScheme.primary, width: 3),
-        borderRadius: const BorderRadius.all(Radius.circular(30.0)),
-      ),
-      showDragHandle: true,
       context: context,
       builder: (context) {
         return const LangBottomSheet();

@@ -1,9 +1,9 @@
 class HadethData {
   // data encapsulation
-  String title;
-  String content;
+  final String title;
+  final String content;
 
-  HadethData(
+  const HadethData(
     this.title,
     this.content,
   );
