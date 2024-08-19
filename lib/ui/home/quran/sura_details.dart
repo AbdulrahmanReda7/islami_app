@@ -46,7 +46,7 @@ class _SuraDetailsState extends State<SuraDetails> {
                 InkWell(
                     onTap: () {
                       final AudioPlayer player = AudioPlayer();
-                      player.play(AssetSource("assets/sounds/2.mp3"));
+                      player.play(AssetSource("assets/sounds/1.mp3"));
                     },
                     child: Icon(
                       size: 35,
@@ -91,7 +91,7 @@ class _SuraDetailsState extends State<SuraDetails> {
 
   void readFileData(int fileIndex) async {
     String fileContent =
-    await rootBundle.loadString("assets/files/${fileIndex + 1}.txt");
+        await rootBundle.loadString("assets/files/${fileIndex + 1}.txt");
     List<String> lines = fileContent.trim().split("\n");
     verses = lines;
     setState(() {});
