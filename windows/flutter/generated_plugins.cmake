@@ -3,10 +3,12 @@
 #
 
 list(APPEND FLUTTER_PLUGIN_LIST
+        audioplayers_windows
+        flutter_localization
         )
 
 list(APPEND FLUTTER_FFI_PLUGIN_LIST
-        )
+)
 
 set(PLUGIN_BUNDLED_LIBRARIES)
 
